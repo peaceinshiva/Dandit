@@ -1,0 +1,73 @@
+{% extends "base.html" %} {% block body %}
+
+
+
+
+
+<html>
+
+<head>
+    <title>
+        Dictionary Question
+    </title>
+</head>
+
+<body>
+    <div class='container-fluid'>
+        <h1> Basic DictionaryQuestion</h1>
+    </div>
+    <div class='container my-4'>
+        <a href="/static/question/dictionary_question.pdf" download>
+            <img src="/static/pdf.png"> <br> Download Question
+        </a>
+
+    </div>
+
+    <div class='container my-4'>
+        <br>
+        <hr>1) Write a Python script to concatenate following dictionaries to create a new one.<br> Sample Dictionary :<br> dic1={1:10, 2:20}<br> dic2={3:30, 4:40}<br> dic3={5:50,6:60}
+        <br> Expected Result : {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}<br>
+
+        <br>
+        <hr>2)Write a Python script to generate and print a dictionary that contains a number (between 1 and n) in the form (x, x*x).<br> Sample Dictionary ( if n = 5) :<br> Expected Output : {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}<br>
+
+        <br>
+        <hr>3) Write a Python program to sum all the value in a dictionary<br> Sample Dictionary : {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}<br> Output=210
+
+        <br>
+
+        <br>
+        <hr>4) Write a Python program to sort a dictionary by key<br> Sample Dictionary:{6:'ram',1:'Shiva',4:'Rahul',2:'Shub',3:'Aman',5: 'rohit'}<br> Expected Result : {1:'Shiva', 2: 'Shub', 3:'Aman', 4:'Rahul', 5: 'rohit', 6:'ram'} <br>
+
+        <br>
+        <hr>5)Write a Python program to combine two dictionary adding values for common keys.<br> d1 = {'a': 100, 'b': 200, 'c':300,'e':700}<br> d2 = {'a': 200, 'b': 200, 'd':400,'e': 200}<br> Sample output: Counter({'a': 300, 'b': 400, 'd': 400, 'c': 300,'e':900})<br>
+
+        <br>
+        <hr>6) Write a Python program to create and display all combinations of letters, selecting each letter from a different key in a dictionary. <br> Sample data : {'1':['a','b'], '2':['c','d']}<br> Expected Output:<br> ac
+        <br> ad
+        <br> bc
+        <br> bd
+        <br>
+
+        <br>
+        <hr>7) Write a Python program to create a dictionary from a string. Go to the editor<br> Note: Track the count of the letters from the string.<br> Sample string : 'shiva is back'<br> Expected output: {'s': 2,'h':1,'i':2,'v':1,'a':2,'b':1,'c':1,'k':1}<br>
+
+        <br>
+        <hr>8) Write a Python program to get the top three items in a shop.<br> Sample data: {'item1': 45.50, 'item2':35, 'item3': 41.30, 'item4':55, 'item5': 24}<br> Expected Output:<br> item4 55<br> item1 45.5<br> item3 41.3<br>
+
+        <br>
+        <hr>9) Write a Python program to convert a given dictionary into a list of lists.<br> Original Dictionary:<br> {1: 'red', 2: 'green', 3: 'black', 4: 'white', 5: 'black'}<br> Convert the said dictionary into a list of lists:<br> [[1, 'red'], [2, 'green'],
+        [3, 'black'], [4, 'white'], [5, 'black']]<br>
+
+        <br>
+        <hr>10) Write a Python program to drop empty Items from a given Dictionary.<br> Original Dictionary:<br> {'c1': 'Red', 'c2': 'Green', 'c3':''}<br> New Dictionary after dropping empty items:<br> {'c1': 'Red', 'c2': 'Green'}<br>
+
+    </div>
+
+
+
+</body>
+
+</html>
+
+{% endblock %}

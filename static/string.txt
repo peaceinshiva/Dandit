@@ -1,0 +1,69 @@
+1) Add (hello) in the middle of given string,if the value is odd then add one number
+Like Arun-----ArHelloun ,shivam------shiHellovam
+
+2) Write a program to count each character of given string like:¶
+aabbbbbccc
+a 2 b 5 c 3
+
+aabbbbbzccc
+a 2 b 5 z 1 c 3
+
+3) WAP to print reverse by character , word and character of word
+a="How are you"
+
+s1='you are how'
+s2='woH era uoy'
+s3='uoy era woH'
+
+4) WAP to take a Phone of user and check condition of number if number is start 9 or 8 and lenght is 10 then print number is correct otherwise print number is incorrect
+
+
+5) WAP to take a string and count any one character in string
+'ShivamSS' --->s=3
+
+6) WAP to to take a string and count the vowel and constant value
+
+7) Remove all duplicate
+aabbbbbccc------> abc
+
+7) WAP to take a string
+sa2shv3shivam2'
+saashvvvshivamm
+
+a2b3dc4
+aabbbdcccc
+
+8) Count upper case and lower case in string
+
+9) WAP to change the character ''a'' to ''i''
+
+10) WAP to take string from user and print only alphanumeric string
+'Shivam14 asd food boe434'
+Shivam14 boe434
+
+11) WAP to find the uncommon string¶
+
+a='abcd'
+b='abc'
+
+d
+
+
+12) Count upper case , lower and special character case in string
+
+13) WAP to reverse the string¶
+
+14) WAP to upper the 0 and -1 index of word of given string
+
+
+a='Shiva is boy'
+'ShivA IS BoY '
+
+
+15) Program to find maximum and minimum occurring character in a string`
+
+a='aabbbbbbbbcccccccccccccccccccccccccccccccc'
+
+c 32
+
+

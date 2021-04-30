@@ -1,0 +1,43 @@
+{% extends "base.html" %} {% block body %}
+
+
+
+
+<head>
+
+    <link rel="stylesheet" href="cs.css"> {% block title %} {% endblock title%}
+</head>
+
+<body>
+    <div class='container my-4'>
+        <h1>Contact US</h1>
+    </div>
+    <div class='container my-4 border'>
+
+        <form method="post" action='/contact'>
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="InputEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='email'>
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="c_name" name='name'>
+
+            </div>
+
+            <div class="form-group">
+                <label for="query">Enter your Query:</label>
+                <textarea class="form-control" rows="5" id="query" name='query'></textarea>
+            </div><br>
+            <div class='container'>
+                <button type="submit" class="btn btn-outline-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+
+{% endblock %}

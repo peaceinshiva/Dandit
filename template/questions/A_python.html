@@ -1,0 +1,106 @@
+{% extends "base.html" %} {% block body %}
+
+
+
+
+
+<html>
+
+<head>
+    <title>
+        Advance Question
+    </title>
+</head>
+
+<body>
+    <div class='container-fluid'>
+        <h1>Advance Question</h1>
+        <a href="/static/question/Advance_python_question.pdf" download>
+            <img src="/static/pdf.png"> <br> Download Question
+        </a>
+    </div>
+    <div class='container my-4'>
+        <hr><br>1) Write a function that returns True if two lists, when combined, form a consecutive sequence.<br> consecutive_combo([7, 4, 5, 1], [2, 3, 6]) ➞ True<br> consecutive_combo([1, 4, 6, 5], [2, 7, 8, 9]) ➞ False<br> consecutive_combo([1, 4, 5,
+        6], [2, 3, 7, 8, 10]) ➞ False<br> consecutive_combo([44, 46], [45]) ➞ True<br>
+
+
+        <hr><br>2) Create a function that takes a list of numbers or strings and returns a list with the items<br> from the original list stored into sublists. Items of the same value should be in the same sublist.<br> advanced_sort([2, 1, 2, 1]) ➞ [[2, 2],
+        [1, 1]]<br> advanced_sort([5, 4, 5, 5, 4, 3]) ➞ [[5, 5, 5], [4, 4], [3]]<br> advanced_sort(["b", "a", "b", "a", "c"]) ➞ [["b", "b"], ["a", "a"], ["c"]]<br>
+
+
+        <hr><br>3) This is a companion to my previous challenge Numbers To English.<br> Given an English description of an integer in the range 0 to 999, devise a function that returns the integer in numeric form.<br> Examples
+
+        <br> eng2nums('four') ➞ 4<br> eng2nums('forty') ➞ 40<br> eng2nums('six hundred') ➞ 600<br> eng2nums('one hundred fifteen') ➞ 115<br> eng2nums('seven hundred sixty seven') ➞ 767<br>
+
+
+        <hr><br>4) Imagine you took all the numbers between 0 and n and concatenated them together into a long string.<br> How many digits are there between 0 and n? Write a function that can calculate this.<br> There are 0 digits between 0 and 1, there are
+        9 digits between 0 and 10 and there are 189 digits between 0 and 100.<br> EXAMPLES -><br> digits(1) ➞ 0<br> digits(10) ➞ 9<br> digits(100) ➞ 189<br> digits(2020) ➞ 6969<br>
+
+        <hr><br>5) Create a function that returns the characters from a list or string r on odd or even positions, depending on the specifier s. <br> The specifier will be "odd" for items on odd positions (1, 3, 5, ...) and "even" for items on even positions
+        (2, 4, 6, ...).<br> EXAMPLES- <br> --> char_at_pos([2, 4, 6, 8, 10], "even") ➞ [4, 8]<br> --> 4 & 8 occupy the 2nd & 4th positions<br> --> char_at_pos("EDABIT", "odd") ➞ "EAI"<br> --> "E", "A" and "I" occupy the 1st, 3rd and 5th positions<br>        --> char_at_pos(["A", "R", "B", "I", "T", "R", "A", "R", "I", "L", "Y"], "odd") ➞ ["A", "B", "T", "A", "I", "Y"]<br>
+
+
+        <hr><br>6) you are given three inputs: a string, one letter, and a second letter.<br> Write a function that returns True if every instance of the first letter occurs before every instance of the second letter.<br> Examples
+
+        <br> --> first_before_second("a rabbit jumps joyfully", "a", "j") ➞ True<br> --> Every instance of "a" occurs before every instance of "j".<br> --> first_before_second("knaves knew about waterfalls", "k", "w") ➞ True<br> --> first_before_second("happy
+        birthday", "a", "y") ➞ False<br> --> The "a" in "birthday" occurs after the "y" in "happy".<br> --> first_before_second("precarious kangaroos", "k", "a") ➞ False<br>
+
+        <hr><br>7) Given a list of coins, father needs to distribute them amongst his three children.<br> Write a function to determine if the coins can be distributed equally or not. <br> Return True if each son receives the same amount of money, otherwise
+        return False.<br> EXAMPLES
+
+        <br> [1, 2, 3, 2, 2, 2, 3] ➞ True<br> Amount to be distributed to each child = (1+2+3+2+4+3)/3 => 15/3 => 5<br> Possible set of coin to be distributed to children = [(1,2,2),(2,3),(2,3)]<br> [5, 3, 10, 1, 2] ➞ False<br> Amount to be distributed
+        to each child = (5+3+10+1+2)/3 => 21/3 => 7<br> But there are no combination such that each child get equal value which is 7.<br> coins_div([2, 4, 3, 2, 4, 9, 7, 8, 6, 9]) ➞ True<br>
+
+
+
+        <hr><br>8) 5) In this challenge, you have to establish if the digits of a given number form a sequence (ascending or descending).<br> Given an integer n, implement a function that returns a string:<br> "Metadrome" if the digits of n form an ascending
+        sequence without repeating digits.<br> "Plaindrome" if the digits of n form an ascending sequence with repeating digits.<br> "Katadrome" if the digits of n form a descending sequence without repeating digits.<br> "Nialpdrome" if the digits of
+        n form a descending sequence with repeating digits.<br> "Repdrome" if n contains a single repeating digit.<br> "Nondrome" if none of the above conditions is true.<br>
+
+
+        <hr><br>9) Create a function that takes an integer argument and returns a list of prime numbers found in the decimal representation of that number.<br> For example, extract_primes(1717) returns [7, 7, 17, 17, 71].<br> The list should be in acending
+        order. If a prime number appears more than once, every occurance should be listed. <br> If no prime numbers are found, return an empty list.<br> Examples
+
+        <br> extract_primes(1) ➞ []<br> extract_primes(7) ➞ [7]<br> extract_primes(73) ➞ [3, 7, 73]<br> extract_primes(103) ➞ [3]<br> extract_primes(1313) ➞ [3, 3, 13, 13, 31, 131, 313]<br>
+
+
+        <hr><br>10) Scoring plays in American football count as either 2, 3, 6, 7, or 8 points.<br> Write a function that has as it's argument a football score and returns the number of possible ways that score can be achieved. <br> Order is not important.<br>        Examples
+
+        <br> football(4) ➞ 1<br> # 2+2<br> football(6) ➞ 3<br> # 2+2+2 or 3+3 or 6<br> football(7) ➞ 2<br> # 2+2+3 or 7<br> football(9) ➞ 4<br> # 2+2+2+3 or 3+3+3 or 3+6 or 7+2<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</body>
+
+</html>
+
+{% endblock %}

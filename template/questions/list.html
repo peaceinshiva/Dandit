@@ -1,0 +1,45 @@
+{% extends "base.html" %} {% block body %}
+
+
+
+
+
+<html>
+
+<head>
+    <title>
+        List Question
+    </title>
+</head>
+
+<body>
+    <div class='container-fluid'>
+        <h1>Basic List Question</h1>
+        <a href="/static/question/List_questions.pdf" download>
+            <img src="/static/pdf.png"> <br> Download Question
+        </a>
+    </div>
+    <div class='container my-4'>
+
+        1) WAP to revese the list using pop and del<br>
+        <hr>2) WAP to print uncommon element of two list<br>
+        <br>
+        <hr>3) If element of list is even than multiply with 3 other wise multiply with 5<br> l=[1,2,3,4,5,6,7,8,9]
+        <br> Output: [5, 6, 15, 12, 25, 18, 35, 24, 45]<br>
+        <br>
+        <hr>4) If element is prime of the list then print prime number<br> l=[1,2,3,4,5,6 , 13 , 23 , 50 , 53]<br> 1 prime 2 prime 3 prime 4 not prime 5 prime 6 not prime 13 prime 23 prime 50 not prime 53 prime <br>
+        <br>
+        <hr>5): Concatenate two lists index-wise<br> Given: list1 = ["M", "na", "i", "sh"]<br> list2 =["y", "me", "s", "iva"]<br> Expected output: ['My', 'name', 'is', 'shiva']<br>
+        <br>
+        <hr>6): Concatenate two lists in the following order<br> list1 = ["Hello ", "take "] <br> list2 = ["Dear", "Sir"] <br> Expected output: ['Hello Dear', 'Hello Sir', 'take Dear', 'take Sir']<br>
+        <br>
+        <hr>7):Add item 7000 after 6000 in the following Python List Given: <br> list1 = [10, 20, [300, 400, [5000, 6000], 500],20,6000, 40] <br> Expected output: [10, 20, [300, 400, [5000, 6000, 7000], 500],20,6000,7000, 40] <br>
+        <br>
+        <hr>8): Find the sum of the series 2 +22 + 222 + 2222 + .. n terms <br> Given: number_of_terms = 5 <br> So series will become 2 + 22 + 222 + 2222 + 22222<br> Expected output: 24690<br>
+
+    </div>
+</body>
+
+</html>
+
+{% endblock %}

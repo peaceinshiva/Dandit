@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block body %}
+
+<!doctype html>
+
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="cs.css"> {% block title %} Login {% endblock title%}
+</head>
+
+<body>
+    <h1>Welcome to Shiva Techno Group
+
+        <br>
+        <hr><br>
+        <form action="detail" method="post">
+
+            <div id='contact'>
+
+                <div class="line"><label for="F_name">First name *: </label><input type="text" id="F_name" name="f_name" /></div>
+                <div class="line"><label for="L_names">Last Names *: </label><input type="text" id="L_names" name="l_name" /></div>
+                <div class="line"><label for="email">Email *: </label><input type="email" id="email" name="email" /></div>
+
+                <div class="line"><label for="tel">Phone: </label><input type="text" id="tel" name="phone" /></div>
+                <label for="usrname">Username</label>
+                <input type="text" id="usrname" name="usrname" required><br>
+
+
+
+                <label for="pass">Password :</label>
+                <input type="password" id="pass" name="password" minlength="8" required>(8 characters minimum)<br>
+
+                <button type="button" id="bu" value="Submit">Submit</button> {{Submit}}
+            </div>
+        </form>
+
+</body>
+
+</html>
+{% endblock %}
