@@ -1,0 +1,1 @@
+web: waitress-serve --port=$PORT Shiva_techno.wsgi:application
