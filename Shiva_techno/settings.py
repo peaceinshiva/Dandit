@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     'index.apps.IndexConfig',
+    'project.apps.ProjectConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -68,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
             ],
         },
     },
@@ -126,7 +128,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-STATIC_ROOT=BASE_DIR / 'static'
+# STATIC_ROOT=BASE_DIR / 'static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-auto-field

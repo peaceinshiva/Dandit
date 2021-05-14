@@ -36,4 +36,20 @@ urlpatterns = [
     path('Loops',include('index.urls')),
     path('Dictionary',include('index.urls')),
     path('A_python',include('index.urls')),
+
+
+    path('logout',include('index.urls')),
+    path('login',include('index.urls')),
+    
+    path('signup',include('index.urls')),
+    path('project_1',include('index.urls')),
+    path('project_2',include('index.urls')),
+    path('project_3',include('index.urls')),
+    path('project_rohit',include('index.urls')),
+    path('project_shiva',include('index.urls')),
+    path('project_shilpi',include('index.urls')),
+    
+    path('basic_python_a',include('index.urls')),
+
+    
 ]

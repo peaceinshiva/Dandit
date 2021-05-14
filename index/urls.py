@@ -21,7 +21,7 @@ from index import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name='home'),
-    path('registration',views.registration,name='registration'),
+ 
     path('home',views.home,name='home'),
     path('about',views.about,name='about'),
     path('contact',views.contact,name='contact'),
@@ -30,5 +30,23 @@ urlpatterns = [
     path('Dictionary',views.Dictionary,name='Dictionary'),
     path('string',views.string,name='string'),
     path('Loops',views.Loops,name='Loops'),
-    path('A_python',views.A_python,name='A_python')
+    path('A_python',views.A_python,name='A_python'),
+
+    path('login',views.loginuser,name='login'),
+    path('logout',views.logUser,name='logout'),
+    path('signup',views.signup,name='signup'),
+
+
+
+# Projects
+    path('project_1', views.project_1, name='project1'),
+    path('project_2', views.project_2, name='project2'),
+    path('project_3', views.project_3, name='project3'),
+
+    path('project_shiva', views.project_shiva, name='project2'),
+    path('project_shilpi', views.project_shilpi, name='project2'),
+    path('project_rohit', views.project_rohit, name='project2'),
+
+
+    path('basic_python_a',views.basic_python_a,name='basic_python_a')
 ]

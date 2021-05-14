@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT Shiva_techno.wsgi:application
+web: waitress-serve --port=8000 Shiva_techno.wsgi:application
