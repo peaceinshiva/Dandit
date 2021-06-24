@@ -40,7 +40,7 @@ def contact(request):
         mal=(f"Thank you {name} for your Interest we will Contact you sooon ")
         
         server=smtplib.SMTP_SSL('smtp.gmail.com',465)
-        server.login("shivatechnogroup@gmail.com","Asdf@54321")
+        server.login("shivatechnogroup@gmail.com","Shiva@321")
 
         server.sendmail("shivatechnogroup@gmail.com",email,mal)
 
