@@ -9,10 +9,10 @@ from django.contrib.auth import authenticate,login,logout
 
 
 def home(request):
-    if request.user.is_authenticated:
-        return render(request,'regist/home_login.html')
-    else:
-        return render(request,'home.html')
+    # if request.user.is_authenticated:
+    #     return render(request,'regist/home_login.html')
+    # else:
+    return render(request,'home.html')
 
 def about(request):
     return render(request,'about.html')
@@ -64,7 +64,7 @@ def loginuser(request):
         if user is not None:
             login(request,user)
             messages.success(request, f'Welcome {request.user.get_short_name()} to Shiva Techno Group')
-            return render(request,'regist/home_login.html')
+            return render(request,'home.html')
         
         else:
             messages.warning(request, 'Invalid username or password')
@@ -134,7 +134,7 @@ def signup(request):
 def list(request):
     return render(request,'questions/list.html')
 
-def If_else(request):
+def if_else(request):
     return render(request,'questions/if_else.html')
 def Loops(request):
     return render(request,'questions/Loops.html')

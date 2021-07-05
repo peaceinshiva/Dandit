@@ -31,7 +31,7 @@ urlpatterns = [
     path('contact',include('index.urls')),
     path('list',include('index.urls')),
 
-    path('If_else',include('index.urls')),
+    path('if_else',include('index.urls')),
     path('string',include('index.urls')),
     path('Loops',include('index.urls')),
     path('Dictionary',include('index.urls')),
