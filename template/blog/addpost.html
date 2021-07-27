@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block body %}
+
+<a type="button" class="btn btn-primary" href="/dash">Dashboard </a>
+
+
+
+<div class='container my-4'>
+    <h1>Dashboard / Add Post</h1>
+</div>
+<div class='container my-4 border'>
+
+    <form method="post" action='/addpost'>
+        {% csrf_token %}
+
+
+        <div class="mb-3">
+            <label for="name" class="form-label">Title</label>
+            <input type="text" class="form-control" id="c_name" name='title'>
+
+        </div>
+
+        <div class="form-group">
+            <label for="query">Enter your Blogs:</label>
+            <textarea class="form-control" rows="5" id="query" name='query'></textarea>
+        </div><br>
+        <div class='container'>
+            <button type="submit" class="btn btn-outline-primary">Submit</button>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

@@ -13,5 +13,18 @@ class Contact(models.Model):
 
 
 
+# class Post(models.Model):
+#     id=models.AutoField(primary_key=True)
+#     author=models.CharField(max_length=100)
+#     # email=models.EmailField(max_length=200)
+#     # em=models.TextField(max_length=200)
+#     title=models.CharField(max_length=200)
+#     description=models.TextField()
 
-
+class b_Post(models.Model):
+    id=models.AutoField(primary_key=True)
+    author=models.CharField(max_length=100)
+    email=models.EmailField(max_length=200)
+    
+    title=models.CharField(max_length=200)
+    description=models.TextField()

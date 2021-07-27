@@ -1,0 +1,54 @@
+{% extends "base.html" %} {% block body %}
+
+
+
+
+
+<body>
+    <b><a href="/addpost" type="button" class="btn btn-success">Add Post</a></b>
+    <a href="/logout">
+        <img src="/static/logout.jpg">
+    </a>
+
+    <div class="alert alert-info" role="alert">
+
+        <h1>
+            <div class="text-center">Show Post Information </h1>
+        </div>
+    </div>
+    <table class="table table-hover bg-white">
+        <thead>
+            <tr>
+                <th scope="col" style="width: 6%;">ID</th>
+                <th scope="col" style="width: 28%;">Title</th>
+                <th scope="col" style="width: 45%;">Description</th>
+                <th scope="col" style="width: 15%;">Action</th>
+            </tr>
+        </thead>
+
+        {% for post in posts %}
+
+
+        <tr>
+            <td>
+                {{post.id}}
+            </td>
+            <td>
+                {{post.title}}
+            </td>
+            <td>
+                {{post.description}}
+            </td>
+            <td>
+                <a type="button" class="btn btn-primary" href="{% url 'deletepost' post.id %}"> Edit </a>
+
+            </td>
+
+        </tr>
+        <!-- {{post.title}} {{post.author}} {{post.description}}  -->
+
+        {% endfor %}
+
+    </table>
+</body>
+{% endblock %}

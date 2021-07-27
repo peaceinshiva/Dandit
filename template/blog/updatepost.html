@@ -1,0 +1,61 @@
+{% extends "base.html" %} {% block body %}
+
+<a type="button" class="btn btn-primary" href="/dash">Dashboard </a>
+
+
+<div class="col-sm-10">
+
+    <h3> Delete blog/ Update blog</h3>
+</div>
+
+
+
+
+<div class='container my-4 border'>
+
+
+    <form method="post" action='/updateblog'>
+        {% csrf_token %} {% for post in posts %}
+
+        <b>ID :</b> <input value={{post.id}} name='id' readonly><br><br>
+        <!-- <textarea class="form-control " name='title'>{{post.id}} -->
+        </textarea>
+
+        <div class="mb-3">
+
+            <b> <label for="name" class="form-label">Title</label></b>
+            <textarea class="form-control auto-resize-textarea" rows="2" name='title'>{{post.title}}
+            </textarea>
+
+
+        </div>
+
+        <div class="form-group">
+
+            <b> <label for="name" class="form-label">Update Blogs</label></b>
+
+            <textarea class="form-control auto-resize-textarea" rows="8" name='desc'>{{post.description}}
+                  </textarea>
+
+        </div><br> {% endfor %}
+
+        <div class="mb-3">
+            <label for="name">Select your Choice</label>
+
+            <select class="form-select" name="choice" id="name">
+                    
+                <option  value='none'selected disabled>Delete / Update</option>
+                <option value='Update'>Update</option> 
+                <option value="Delete">Delete</option>
+                
+            </select>
+        </div>
+
+        <div class='container'>
+            <input type="submit" class="btn btn-primary">
+
+        </div>
+    </form>
+</div>
+
+{{post.description}} {% endblock %}

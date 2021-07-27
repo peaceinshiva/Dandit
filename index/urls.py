@@ -17,11 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from index import views
 
- 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name='home'),
- 
     path('home',views.home,name='home'),
     path('about',views.about,name='about'),
     path('contact',views.contact,name='contact'),
@@ -48,5 +46,16 @@ urlpatterns = [
     path('project_rohit', views.project_rohit, name='project2'),
 
 
-    path('basic_python_a',views.basic_python_a,name='basic_python_a')
+    path('basic_python_a',views.basic_python_a,name='basic_python_a'),
+
+# Blogs 
+    path('blogs',views.blogs,name='blogs'),
+    path('dash',views.dashboard_b,name='blogs'),
+   
+    path('addpost',views.addpost,name='blogs'),
+    path('updateblog',views.updateblog,name='blogs'),
+    path('updatepost/<str:id>',views.update_post,name='updatepost'),
+    
+  
+ 
 ]

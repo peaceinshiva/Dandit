@@ -1,11 +1,12 @@
 from django.shortcuts import render,HttpResponse
 from datetime import datetime
-from index.models import Contact
+from index.models import Contact,b_Post
 # Create your views here.
 from django.contrib import messages
 import smtplib
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
+
 
 
 def home(request):
@@ -52,9 +53,11 @@ def contact(request):
 
 def logUser(request):
     messages.success(request, 'Logout Succecfull')
+    
+    messages.success(request, f'Thanks {request.user.get_short_name()} to Using this sites')
     logout(request)
     return render(request,'home.html')
-
+    
 def loginuser(request):
     if request.method=='POST':
         email=request.POST.get('email')
@@ -216,4 +219,97 @@ def basic_python_a(request):
         messages.warning(request, 'First login your account')
         return render(request,'regist/login.html')
 
+
+
+
+# Blogs views
+
+def blogs(request):
+    posts=b_Post.objects.all()
+    return render(request,'blog/blogs.html',{'posts':posts})
+
+def dashboard_b(request):
+    
+    if request.user.is_authenticated:
+        userna=request.user.get_username()
+        # posts=b_Post.objects.all()
+        posts=(b_Post.objects.filter(email=userna))
+        # print(posts)
+        return render(request,'blog/dash.html',{'posts':posts})
+    
+    else:
+        messages.warning(request, 'First login your account')
+        return render(request,'regist/login.html')
+
+
+
+
+
+
+def addpost(request):
+    if request.user.is_authenticated:
+        if request.method=='POST':
+            autho=request.user.get_short_name()
+            userna=request.user.get_username()
+            title=request.POST.get('title')
+            descr=request.POST.get('query')
+            autho=str({request.user.get_short_name()})
+            autho=autho[2:-2]
+            post=b_Post(author=autho,title=title,description=descr,email=userna)
+            post.save()
+            messages.success(request, 'We Add your blogs in our Timelines .')
+            posts=b_Post.objects.all()
+            return render(request,'blog/dash.html',{'posts':posts})
+        else:
+            
+            return render(request,'blog/addpost.html')
+        
+    else:
+        messages.warning(request, 'First login your account')
+        return render(request,'regist/login.html')
+
+def updateblog(request):
+    if request.method=='POST':
+        posts=b_Post.objects.all()
+        if request.POST.get('choice')=='Update':
+            messages.success(request, 'We Update  your blogs in our Timelines .')
+            id=request.POST.get('id')
+            title=request.POST.get('title')
+            desc=request.POST.get('desc')
+            print(id)
+            reg = b_Post(id=id,title=title,description=desc)
+            reg.save()
+        elif request.POST.get('choice')=='Delete':
+            messages.success(request, 'Successfully Deleted your blogs')
+            reg = b_Post(id=request.POST.get('id'))
+            reg.delete()
+        else:
+            print("else")
+            messages.success(request, 'You have not selected options Delete or update')
+            id=request.POST.get('id')
+            posts=(b_Post.objects.filter(id=id))
+            return render(request,'blog/updatepost.html',{'posts':posts})
+    return render(request,'blog/dash.html',{'posts':posts})
+        
+        
+
+def update_post(request,id):
+    if request.user.is_authenticated:
+        posts=(b_Post.objects.filter(id=id))
+        return render(request,'blog/updatepost.html',{'posts':posts})
+    else:
+        messages.warning(request, 'First login your account')
+        return render(request,'regist/login.html')
+
+
+def deleteblog(request):
+
+    if request.user.is_authenticated:
+        messages.warning(request, 'Your Account Deleted')
+        posts=b_Post.objects.all()
+        return render(request,'blog/dash.html',{'posts':posts})
+
+    else:
+        messages.warning(request, 'First login your account')
+        return render(request,'regist/login.html')
 

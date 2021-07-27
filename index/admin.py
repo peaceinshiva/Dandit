@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from index.models import Contact
+from index.models import Contact,b_Post
 
 
 
@@ -11,3 +11,4 @@ admin.site.register(Contact)
 
 
 
+admin.site.register(b_Post)
