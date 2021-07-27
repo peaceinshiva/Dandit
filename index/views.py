@@ -137,7 +137,7 @@ def signup(request):
 def list(request):
     return render(request,'questions/list.html')
 
-def if(request):
+def if_(request):
     return render(request,'questions/if.html')
 def Loops(request):
     return render(request,'questions/Loops.html')
