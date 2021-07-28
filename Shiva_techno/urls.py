@@ -30,6 +30,7 @@ urlpatterns = [
     path('about',include('index.urls')),
     path('contact',include('index.urls')),
     path('list',include('index.urls')),
+    path('python_answer',include('index.urls')),
 
     path('if_else',include('index.urls')),
     path('string',include('index.urls')),

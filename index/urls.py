@@ -25,6 +25,7 @@ urlpatterns = [
     path('contact',views.contact,name='contact'),
     path('list',views.list,name='list'),
     path('if_else',views.if_,name='if_else'),
+    path('python_answer',views.python_answer,name='if_else'),
     path('Dictionary',views.Dictionary,name='Dictionary'),
     path('string',views.string,name='string'),
     path('Loops',views.Loops,name='Loops'),
