@@ -67,8 +67,9 @@ def loginuser(request):
         if user is not None:
             login(request,user)
             messages.success(request, f'Welcome {request.user.get_short_name()} to Shiva Techno Group')
+            print(request.get_full_path())
+            
             return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
-            # return render(request,'home.html')
         else:
             messages.warning(request, 'Invalid username or password')  
     return render(request,'regist/login.html')

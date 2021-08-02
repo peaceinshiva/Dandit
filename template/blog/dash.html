@@ -12,39 +12,41 @@
             <div class="text-center">Show Post Information </h1>
         </div>
     </div>
-    <table class="table table-hover bg-white">
-        <thead>
+    <div class="table-responsive">
+        <table class="table table-hover bg-white">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+
+            {% for post in posts %}
+
             <tr>
-                <th scope="col" style="width: 6%;">ID</th>
-                <th scope="col" style="width: 28%;">Title</th>
-                <th scope="col" style="width: 45%;">Description</th>
-                <th scope="col" style="width: 15%;">Action</th>
+                <td>
+                    {{post.id}}
+                </td>
+                <td>
+                    {{post.title}}
+                </td>
+                <td>
+                    {{post.description}}
+                </td>
+                <td>
+                    <a type="button" class="btn btn-primary" href="{% url 'updatepost' post.id %}"> Edit </a>
+
+                </td>
+
             </tr>
-        </thead>
-
-        {% for post in posts %}
-
-        <tr>
-            <td>
-                {{post.id}}
-            </td>
-            <td>
-                {{post.title}}
-            </td>
-            <td>
-                {{post.description}}
-            </td>
-            <td>
-                <a type="button" class="btn btn-primary" href="{% url 'updatepost' post.id %}"> Edit </a>
-
-            </td>
-
-        </tr>
-        <!-- {{post.title}} {{post.author}} {{post.description}}  -->
+            <!-- {{post.title}} {{post.author}} {{post.description}}  -->
 
 
-        {% endfor %}
+            {% endfor %}
 
-    </table>
+        </table>
+    </div>
 </body>
 {% endblock %}
