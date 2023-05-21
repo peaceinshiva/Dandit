@@ -41,9 +41,9 @@ def contact(request):
         mal=(f"Thank you {name} for your Interest we will Contact you sooon ")
         
         server=smtplib.SMTP_SSL('smtp.gmail.com',465)
-        server.login("shivatechnogroup@gmail.com","Shiva@321")
+        server.login("danditcareerpoint@gmail.com","qzoidhckvxtkigrw")
 
-        server.sendmail("shivatechnogroup@gmail.com",email,mal)
+        server.sendmail("danditcareerpoint@gmail.com",email,mal)
 
         messages.success(request, 'We Got your Query we will contact you soon.')
     return render(request,'contact.html')
@@ -59,19 +59,24 @@ def logUser(request):
     return render(request,'home.html')
     
 def loginuser(request):
-    if request.method=='POST':
-        email=request.POST.get('email')
-        pas=request.POST.get('pass')
-        user = authenticate(username=email, password=pas)
-        logout(request)
-        if user is not None:
-            login(request,user)
-            messages.success(request, f'Welcome {request.user.get_short_name()} to Shiva Techno Group')
-            print(request.get_full_path())
-            
-            return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
-        else:
-            messages.warning(request, 'Invalid username or password')  
+    if request.user.is_authenticated:
+        messages.success(request, f'You have already login to this sites')
+        return render(request,'home.html')
+        
+    else:
+        if request.method=='POST':
+            email=request.POST.get('email')
+            pas=request.POST.get('pass')
+            user = authenticate(username=email, password=pas)
+            logout(request)
+            if user is not None:
+                login(request,user)
+                messages.success(request, f'Welcome {request.user.get_short_name()} to D and IT Career Point')
+                print(request.get_full_path())
+                
+                return render(request,'home.html')
+            else:
+                messages.warning(request, 'Invalid username or password')  
     return render(request,'regist/login.html')
 
         
